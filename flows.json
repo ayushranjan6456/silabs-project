@@ -1,0 +1,518 @@
+[
+    {
+        "id": "896bd872accb02ee",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d9523ea34d18d2af",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "835c1d68d2d9e594",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "538b26e1939c480a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6e201affe046d46b",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "835c1d68d2d9e594",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "61c047df866e6fa3",
+        "type": "ui_group",
+        "name": "Sensor",
+        "tab": "835c1d68d2d9e594",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "90c89ede503098ea",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b12b8d2df3628a1c",
+        "type": "ui_gauge",
+        "z": "896bd872accb02ee",
+        "name": "Spo2",
+        "group": "61c047df866e6fa3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Spo2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ee191fe56d7ac74d",
+        "type": "mqtt in",
+        "z": "896bd872accb02ee",
+        "name": "Temperature",
+        "topic": "room/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90c89ede503098ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "36314b01e5733b0c"
+            ]
+        ]
+    },
+    {
+        "id": "a1bf760b7369383b",
+        "type": "mqtt in",
+        "z": "896bd872accb02ee",
+        "name": "Spo2",
+        "topic": "ayushranjan6456/spo2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "90c89ede503098ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 260,
+        "wires": [
+            [
+                "b12b8d2df3628a1c"
+            ]
+        ]
+    },
+    {
+        "id": "edb4085ed64dc952",
+        "type": "mqtt out",
+        "z": "896bd872accb02ee",
+        "name": "LED",
+        "topic": "ayushranjan6456/led",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "90c89ede503098ea",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "18655ed33af35e2d",
+        "type": "ui_switch",
+        "z": "896bd872accb02ee",
+        "name": "LED",
+        "label": "LED",
+        "tooltip": "",
+        "group": "6e201affe046d46b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "ayushranjan6456/led",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "edb4085ed64dc952"
+            ]
+        ],
+        "inputLabels": [
+            "2"
+        ],
+        "outputLabels": [
+            "1"
+        ]
+    },
+    {
+        "id": "61cd74d13b1448ec",
+        "type": "mqtt in",
+        "z": "896bd872accb02ee",
+        "name": "Testing",
+        "topic": "ayushranjan6456/testing",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90c89ede503098ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
+                "735d74e53993cd99"
+            ]
+        ]
+    },
+    {
+        "id": "735d74e53993cd99",
+        "type": "debug",
+        "z": "896bd872accb02ee",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b6e2af18cd5a03a2",
+        "type": "mqtt in",
+        "z": "896bd872accb02ee",
+        "name": "LED",
+        "topic": "ayushranjan6456/led",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "90c89ede503098ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "86195e47b8ce634b",
+                "18655ed33af35e2d"
+            ]
+        ]
+    },
+    {
+        "id": "86195e47b8ce634b",
+        "type": "debug",
+        "z": "896bd872accb02ee",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b5ed671c4d9e85ca",
+        "type": "mqtt in",
+        "z": "896bd872accb02ee",
+        "name": "Heart Rate",
+        "topic": "ayushranjan6456/heartrate",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "90c89ede503098ea",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "5e47a8be6d3348a2",
+                "d715340840a345fb"
+            ]
+        ]
+    },
+    {
+        "id": "5e47a8be6d3348a2",
+        "type": "ui_gauge",
+        "z": "896bd872accb02ee",
+        "name": "Heart Rate",
+        "group": "6e201affe046d46b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Heart Rate",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 570,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "36314b01e5733b0c",
+        "type": "ui_gauge",
+        "z": "896bd872accb02ee",
+        "name": "Temperature",
+        "group": "61c047df866e6fa3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 570,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d715340840a345fb",
+        "type": "ui_chart",
+        "z": "896bd872accb02ee",
+        "name": "Heart Rate",
+        "group": "6e201affe046d46b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Heart Rate",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "cubic",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    }
+]
