@@ -4,8 +4,8 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "AndroidAP22F0";
-const char* password = "yyyy7779";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
 const char* mqtt_server = "test.mosquitto.org";
 // const int mqttPort = 8883;
@@ -24,6 +24,7 @@ unsigned long lastMsg = 0;
 char msg[MSG_BUFFER_SIZE];
 char hr_str[MSG_BUFFER_SIZE];
 char spo2_str[MSG_BUFFER_SIZE];
+char temp_str[MSG_BUFFER_SIZE];
 int value = 0;
 
 void setup_wifi() {
@@ -99,6 +100,7 @@ void onBeatDetected() {
     Serial.println("♥ Beat!");
 }
 
+int temppin= A0;
 
 void setup() {
   pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
@@ -154,14 +156,24 @@ void loop() {
     float spo2 = pox.getSpO2();
     Serial.print("Heart rate:");
     Serial.print(hr);
-    Serial.print("bpm / SpO2:");
+    Serial.print("\nbpm / SpO2:");
     Serial.print(spo2);
     Serial.println("%");
     
+    int analogValue = analogRead(temppin);
+    float millivolts = (analogValue/1024.0) * 3300; //3300 is the voltage provided by NodeMCU
+    float celsius = millivolts/10;
+    float fahrenheit = ((celsius * 9)/5 + 32);
+    Serial.print("\nTemp:   ");
+    Serial.println(fahrenheit);
+    
+
     snprintf (hr_str, MSG_BUFFER_SIZE, "%.2f", hr);
     snprintf (spo2_str, MSG_BUFFER_SIZE, "%f", spo2);
+    snprintf (temp_str, MSG_BUFFER_SIZE, "%f", fahrenheit);
     client.publish("ayushranjan6456/testing", msg);
     client.publish("ayushranjan6456/heartrate", hr_str);
     client.publish("ayushranjan6456/spo2", spo2_str);
+    client.publish("ayushranjan6456/temp", temp_str);
   }
 }
